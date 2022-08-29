@@ -11,6 +11,26 @@ void create_customer(Customer c, FILE *p_customer)
     fprintf(p_customer, "%d,%s,%f,%s\n", c.id, c.name, c.balance, c.locationCode);
 }
 
-void update_customer_balance(int cust_id, FILE *p_customer)
+void update_customer_balance(int cust_id, float balance, FILE *p_customer)
 {
+    rewind(p_customer);
+    int count = 0;
+    char ch;
+    while ((ch = fgetc(p_customer)) != EOF)
+    {
+        if (ch == '\n')
+        {
+            count++;
+            if (count == cust_id)
+            {
+                char nameBuffer[100];
+                Customer temp;
+                fscanf(p_customer, "%d,%s,%f,%s\n", &temp.id, nameBuffer, &temp.balance, temp.locationCode);
+                temp.name = malloc(strlen(nameBuffer) * sizeof(char));
+                fprintf(p_customer, "%d,%s,%f,%s\n", temp.id, temp.name, temp.balance + balance, temp.locationCode);
+                free(temp.name);
+                break;
+            }
+        }
+    }
 }

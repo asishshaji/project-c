@@ -18,7 +18,5 @@ int main()
     LOG_INFO("Loaded customers file");
 
     Customer c = {.name = "Asish", .locationCode = "TRV"};
-    create_customer(c, p_customers);
-
     return EXIT_SUCCESS;
 }
