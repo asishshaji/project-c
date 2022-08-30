@@ -2,6 +2,14 @@
     "files.associations": {
         "utils.h": "c",
         "models.h": "c",
-        "stdio.h": "c"
-    }
+        "stdio.h": "c",
+        "log.h": "c"
+    },
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/asishst/Desktop/office/project/bin",
+            "binaryPath": "/home/asishst/Desktop/office/project/bin/main",
+            "binaryArgs": []
+        }
+    ]
 }

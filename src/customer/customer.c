@@ -1,6 +1,7 @@
 #include "../../include/models.h"
 #include "../utils/utils.h"
-
+#include <stdlib.h>
+#include <string.h>
 void create_customer(Customer c, FILE *p_customer)
 {
     fseek(p_customer, 0, SEEK_END);

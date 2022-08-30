@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "./include/constants.h"
 #include "./include/models.h"
 #include "./src/customer/customer.h"
 #include "./src/log/log.h"
+#include "./src/mock/mock.h"
 
 int main()
 {
@@ -18,5 +18,8 @@ int main()
     LOG_INFO("Loaded customers file");
 
     Customer c = {.name = "Asish", .locationCode = "TRV"};
+    generateMockData(p_customers);
+
+    fclose(p_customers);
     return EXIT_SUCCESS;
 }
